@@ -1,11 +1,9 @@
 package com.twsz.storeserver.shoppingcart;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.twsz.storeserver.product.Product;
 
-import static org.mockito.Mockito.times;
-import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.*;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -46,7 +44,7 @@ public class ShoppingCartControllerTest {
         verify(shoppingCartItemService,times(1)).saveAll(mockShoppingCartItems);
     }
 
-    private List<ShoppingCartItem> mockShoppingCartItems() throws JsonProcessingException {
+    private List<ShoppingCartItem> mockShoppingCartItems() {
         return Arrays.asList(
                 ShoppingCartItem.builder()
                         .product(Product.builder().id(1).build())
