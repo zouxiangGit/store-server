@@ -1,0 +1,2 @@
+insert into product (id,name,price,unit,total_amount,img_url) values (1,'可乐',4.5,'瓶',10,'/api/img/1');
+insert into product (id,name,price,unit,total_amount,img_url) values (2,'雪碧',4.5,'瓶',10,'/api/img/1');
