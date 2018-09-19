@@ -37,9 +37,11 @@ public class ShoppingCartTest {
         return Arrays.asList(
                 ShoppingCartItem.builder()
                         .product(Product.builder().id(1).build())
+                        .amount(1)
                         .build(),
                 ShoppingCartItem.builder()
                         .product(Product.builder().id(2).build())
+                        .amount(2)
                         .build()
         );
     }

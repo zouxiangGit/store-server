@@ -13,4 +13,5 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class ShoppingCartItem {
     private Product product;
+    private Integer amount;
 }
