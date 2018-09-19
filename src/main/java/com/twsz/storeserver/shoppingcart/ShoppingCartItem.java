@@ -12,6 +12,8 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class ShoppingCartItem {
+    private Integer id;
+    private Integer userId;
     private Product product;
     private Integer amount;
 }

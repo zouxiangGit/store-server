@@ -37,11 +37,12 @@ public class ShoppingCartControllerTest {
     public void should_return_status_code_CREATED_when_call_create_shopping_cart() throws Exception {
         List<ShoppingCartItem> mockShoppingCartItems = mockShoppingCartItems();
         mockMvc.perform(MockMvcRequestBuilders
-                .post("/api/shopping-cart-items")
+                .post("/api/users/1/shopping-cart-items")
                 .characterEncoding("utf-8")
                 .content(new ObjectMapper().writeValueAsString(mockShoppingCartItems))
                 .contentType(MediaType.APPLICATION_JSON_UTF8)
         ).andExpect(status().isCreated());
+        mockShoppingCartItems.forEach(item -> item.setUserId(1));
         verify(shoppingCartItemService,times(1)).saveAll(mockShoppingCartItems);
     }
 
