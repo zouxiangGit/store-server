@@ -22,8 +22,8 @@ import java.util.List;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 @RunWith(SpringRunner.class)
-@WebMvcTest(ShoppingCartController.class)
-public class ShoppingCartControllerTest {
+@WebMvcTest(ShoppingCartItemController.class)
+public class ShoppingCartItemControllerTest {
 
     @Autowired
     private MockMvc mockMvc;

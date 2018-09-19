@@ -15,7 +15,7 @@ import static org.springframework.http.HttpStatus.CREATED;
 
 @RestController
 @RequestMapping("/api/users/{userId}/shopping-cart-items")
-public class ShoppingCartController {
+public class ShoppingCartItemController {
 
     @Autowired
     private ShoppingCartItemService shoppingCartItemService;
