@@ -1,13 +1,7 @@
 package com.twsz.storeserver.shoppingcart;
 
-import org.springframework.stereotype.Repository;
+import org.springframework.data.jpa.repository.JpaRepository;
 
-import java.util.List;
-
-@Repository
-public class ShoppingCartItemRepository {
-    public void saveAll(List<ShoppingCartItem> shoppingCartItemList){
-
-    }
+public interface ShoppingCartItemRepository extends JpaRepository<ShoppingCartItem,Integer> {
 
 }
