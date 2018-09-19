@@ -4,6 +4,8 @@ import com.twsz.storeserver.product.Product;
 
 import static org.junit.Assert.*;
 
+import org.flywaydb.core.Flyway;
+import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,6 +31,15 @@ public class ShoppingCartItemRepositoryTest {
     @Autowired
     private ShoppingCartItemRepository shoppingCartItemRepository;
 
+    @Autowired
+    private Flyway flyway;
+
+    @Before
+    public void setUp() throws Exception {
+        flyway.clean();
+        flyway.migrate();
+    }
+
     @Test
     public void should_save_to_db_when_call_save_all_shopping_cart_item() {
         List<ShoppingCartItem> mockShoppingCartItems = mockShoppingCartItems();
@@ -48,13 +59,11 @@ public class ShoppingCartItemRepositoryTest {
     private List<ShoppingCartItem> mockShoppingCartItems() {
         return Arrays.asList(
                 ShoppingCartItem.builder()
-                        .id(1)
                         .userId(1)
                         .product(Product.builder().id(1).build())
                         .amount(1)
                         .build(),
                 ShoppingCartItem.builder()
-                        .id(2)
                         .userId(1)
                         .product(Product.builder().id(2).build())
                         .amount(2)

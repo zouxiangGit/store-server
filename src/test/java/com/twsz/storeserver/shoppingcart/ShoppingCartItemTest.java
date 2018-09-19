@@ -29,7 +29,7 @@ public class ShoppingCartItemTest {
     @Test
     public void should_return_status_code_CREATED_when_call_create_shopping_cart() {
         ResponseEntity<Void> responseEntity = restTemplate
-                .postForEntity("/api/shopping-cart-items", mockShoppingCartItems(), Void.class);
+                .postForEntity("/api/users/1/shopping-cart-items", mockShoppingCartItems(), Void.class);
         Assert.assertEquals(responseEntity.getStatusCode(), HttpStatus.CREATED);
     }
 
